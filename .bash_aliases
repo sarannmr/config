@@ -34,4 +34,28 @@ thinness)
     export no_proxy="localhost,127.0.0.1"
     ;; 
 
+esac
+
+proxied_git () 
+( 
+    export GIT_PROXY_COMMAND=/tmp/gitproxy;
+    cat  > $GIT_PROXY_COMMAND <<EOF
+#!/bin/bash
+/usr/bin/socat - PROXY:172.16.1.162:\$1:\$2,proxyport=3128
+EOF
+    chmod +x $GIT_PROXY_COMMAND;
+    git "$@"
+)
+
+proxied_ssh () 
+( 
+    export SSH_PROXY_COMMAND=/tmp/gitproxy;
+    cat  > $SSH_PROXY_COMMAND <<EOF
+#!/bin/bash
+/usr/bin/socat - PROXY:172.16.1.162:\$1:\$2,proxyport=3128
+EOF
+    chmod +x $SSH_PROXY_COMMAND;
+    ssh "$@"
+)
+
 

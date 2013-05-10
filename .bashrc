@@ -104,29 +104,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-proxied_git () 
-( 
-    export GIT_PROXY_COMMAND=/tmp/gitproxy;
-    cat  > $GIT_PROXY_COMMAND <<EOF
-#!/bin/bash
-/usr/bin/socat - PROXY:172.16.1.162:\$1:\$2,proxyport=3128
-EOF
-    chmod +x $GIT_PROXY_COMMAND;
-    git "$@"
-)
-
-proxied_ssh () 
-( 
-    export SSH_PROXY_COMMAND=/tmp/gitproxy;
-    cat  > $SSH_PROXY_COMMAND <<EOF
-#!/bin/bash
-/usr/bin/socat - PROXY:172.16.1.162:\$1:\$2,proxyport=3128
-EOF
-    chmod +x $SSH_PROXY_COMMAND;
-    ssh "$@"
-)
-
-
 C_RED="\[\033[0;31m\]"
 C_GREEN="\[\033[0;32m\]"
 C_LIGHT_GRAY="\[\033[0;37m\]"
@@ -150,5 +127,4 @@ C_LIGHT_GREEN="\[\033[1;32m\]"
 # PS1="$C_BLUE[$C_RED\$?$C_BLUE][$C_RED\u@\h:\w$C_BLUE]\$ $C_RESET"
 # PS1="$C_LIGHT_GREEN\u $C_YELLOW@ $C_LIGHT_RED\h $C_YELLOW\w $C_LIGHT_CYAN\$ $C_RESET"
 PS1="$C_LIGHT_GREEN\u $C_WHITE@ $C_LIGHT_PURPLE\h $C_YELLOW\w $C_WHITE\$ $C_RESET"
-
 
