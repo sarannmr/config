@@ -97,22 +97,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-if [ -f ~/.bash_aliases_workdesk ]; then
-    . ~/.bash_aliases_workdesk
-fi
-
-if [ -f ~/.bash_aliases_workness ]; then
-    . ~/.bash_aliases_workness
-fi
-
-if [ -f ~/.bash_aliases_sticky ]; then
-    . ~/.bash_aliases_sticky
-fi
-
-if [ -f ~/.bash_aliases_thinness ]; then
-    . ~/.bash_aliases_thinness
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
