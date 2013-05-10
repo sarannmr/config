@@ -11,7 +11,7 @@ import qualified Data.Map as M
 
 myTerminal = "xfce4-terminal"
 myBorderWidth = 2
-myModMask = mod1Mask
+myModMask = mod4Mask
 myWorkspaces = ["rowser","tmux","Other stuff","4","5"]
 myFocusFollowsMouse = True
 myClickJustFocuses = False
