@@ -25,6 +25,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
   , ((modm,               xK_d			), spawn "xfce4-display-settings --minimal")
   , ((modm .|. shiftMask, xK_q			), spawn "xfce4-session-logout")
   , ((modm,               xK_c 			), kill)
+  -- Shift windows left and right 
+  , ((modm,               xK_bracketleft ), sendMessage Shrink) 
+  , ((modm,               xK_bracketright ), sendMessage Expand) 
      -- Rotate through the available layout algorithms
 	, ((modm, 							xK_space	), sendMessage NextLayout)
 	, ((modm, 							xK_Tab		), windows W.focusDown)
