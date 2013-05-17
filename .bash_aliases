@@ -1,5 +1,8 @@
 hostname=`hostname`
 
+# Common aliases
+alias gittagwithdate='git log --tags --simplify-by-decoration --pretty="format:%ai %d" | sort'
+
 case $hostname in 
 
 sticky.vrt.telus.com) 
@@ -35,6 +38,8 @@ thinness)
     ;; 
 
 esac
+
+# Functions
 
 proxied_git () 
 ( 

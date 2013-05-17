@@ -1,0 +1,20 @@
+#!/bin/bash
+
+iface=$1
+
+if [ $# -eq 0 ] ; then
+	iface="eth0"	
+fi
+
+RXB=$(</sys/class/net/"$iface"/statistics/rx_bytes)
+TXB=$(</sys/class/net/"$iface"/statistics/tx_bytes)
+sleep 2 
+RXBN=$(</sys/class/net/"$iface"/statistics/rx_bytes)
+TXBN=$(</sys/class/net/"$iface"/statistics/tx_bytes)
+RXDIF=$(echo $((RXBN - RXB)) )
+TXDIF=$(echo $((TXBN - TXB)) )
+
+RXSTR=`printf '%-11s' "$((RXDIF / 1024 / 2)) K/s Down"`
+TXSTR=`printf '%-9s' "$((TXDIF / 1024 / 2)) K/s Up"`
+
+echo -e "$RXSTR $TXSTR"
