@@ -41,7 +41,13 @@ dhcp164)
     export no_proxy="localhost,127.0.0.1,localaddress,.vrt.telus.com,172.16.0.0/16"
     ;;
 
-
+lxr)
+    export http_proxy="http://172.16.1.162:3128"
+    export https_proxy=$http_proxy
+    export ftp_proxy=$http_proxy
+    export rsync_proxy=$http_proxy
+    export no_proxy="localhost,127.0.0.1,localaddress,.vrt.telus.com,172.16.0.0/16"
+    ;;
 
 thinness)
     export no_proxy="localhost,127.0.0.1"
