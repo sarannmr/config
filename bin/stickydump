@@ -1,0 +1,24 @@
+#!/bin/bash
+USERNAME=sarann
+IFILE=/home/vrt/.ssh/id_rsa
+DEST_DIR=/home/sarann/transfers/
+OPTS=" -avz "
+HOST="172.16.1.2"
+
+if [ ! $# -eq "1" ] 
+then
+  echo "Usage stickydump <file or folder>"
+  exit 0
+fi  
+
+sourcefile=$PWD/${1%/}
+
+if [ ! -e $sourcefile ] 
+then
+  echo "Can't find $sourcefile"
+  exit 0
+fi  
+
+/usr/bin/rsync $OPTS -e "ssh -i $IFILE" $sourcefile $USERNAME@$HOST:$DEST_DIR 
+
+

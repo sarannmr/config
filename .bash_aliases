@@ -1,5 +1,8 @@
 hostname=`hostname`
 
+# Common aliases
+alias gittagwithdate='git log --tags --simplify-by-decoration --pretty="format:%ai %d" | sort'
+
 case $hostname in 
 
 sticky.vrt.telus.com) 
@@ -30,15 +33,35 @@ workdesk)
     export no_proxy="localhost,127.0.0.1,localaddress"
     ;;
 
+dhcp164)
+    export http_proxy="http://172.16.1.162:3128"
+    export https_proxy=$http_proxy
+    export ftp_proxy=$http_proxy
+    export rsync_proxy=$http_proxy
+    export no_proxy="localhost,127.0.0.1,localaddress,.vrt.telus.com,172.16.0.0/16"
+    ;;
+
+lxr)
+    export http_proxy="http://172.16.1.162:3128"
+    export https_proxy=$http_proxy
+    export ftp_proxy=$http_proxy
+    export rsync_proxy=$http_proxy
+    export no_proxy="localhost,127.0.0.1,localaddress,.vrt.telus.com,172.16.0.0/16"
+    ;;
+
 thinness)
     export no_proxy="localhost,127.0.0.1"
     ;; 
 
 esac
 
+<<<<<<< HEAD
 export PATH=$HOME/bin:$PATH
 
 
+=======
+# Functions
+>>>>>>> 73677adf76577f10fe082b3a745f8c23be98b0db
 
 proxied_git () 
 ( 
