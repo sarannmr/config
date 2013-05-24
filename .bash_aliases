@@ -36,6 +36,10 @@ thinness)
 
 esac
 
+export PATH=$HOME/bin:$PATH
+
+
+
 proxied_git () 
 ( 
     export GIT_PROXY_COMMAND=/tmp/gitproxy;
