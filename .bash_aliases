@@ -55,13 +55,10 @@ thinness)
 
 esac
 
-<<<<<<< HEAD
 export PATH=$HOME/bin:$PATH
-
 
 =======
 # Functions
->>>>>>> 73677adf76577f10fe082b3a745f8c23be98b0db
 
 proxied_git () 
 ( 
