@@ -57,7 +57,6 @@ esac
 
 export PATH=$HOME/bin:$PATH
 
-=======
 # Functions
 
 proxied_git () 
