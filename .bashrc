@@ -104,6 +104,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+complete -cf sudo
+
 C_RED="\[\033[0;31m\]"
 C_GREEN="\[\033[0;32m\]"
 C_LIGHT_GRAY="\[\033[0;37m\]"

@@ -12,35 +12,31 @@ import qualified Data.Map as M
 myTerminal = "xfce4-terminal"
 myBorderWidth = 2
 myModMask = mod4Mask
-myWorkspaces = ["rowser","tmux","Other stuff","4","5"]
+myWorkspaces = ["Browser","tmux"]
 myFocusFollowsMouse = True
 myClickJustFocuses = False
 myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#00ff00"
+myFocusedBorderColor = "#63b6ab"
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $ 
   [
     ((modm,               xK_p			), spawn "xfce4-appfinder")
   , ((modm,               xK_g			), spawn "gnome-terminal")
+  , ((modm,               xK_l			), spawn "chromium %U")
   , ((modm,               xK_d			), spawn "xfce4-display-settings --minimal")
   , ((modm .|. shiftMask, xK_q			), spawn "xfce4-session-logout")
   , ((modm,               xK_c 			), kill)
+
   -- Shift windows left and right 
   , ((modm,               xK_bracketleft ), sendMessage Shrink) 
   , ((modm,               xK_bracketright ), sendMessage Expand) 
-     -- Rotate through the available layout algorithms
+   -- Rotate through the available layout algorithms
 	, ((modm, 							xK_space	), sendMessage NextLayout)
 	, ((modm, 							xK_Tab		), windows W.focusDown)
 		-- Resize viewed windows to the correct size
 	, ((modm,               xK_n     ), refresh)
 	-- Move focus to the next window
 	, ((modm,               xK_Tab   ), windows W.focusDown)
-	-- Move focus to the next window
-	, ((modm,               xK_j     ), windows W.focusDown)
-	-- Move focus to the previous window
-	, ((modm,               xK_k     ), windows W.focusUp  )
-	-- Move focus to the master window
-  , ((modm,               xK_m     ), windows W.focusMaster  )
 	-- Swap the focused window and the master window
 	, ((modm,               xK_Return), windows W.swapMaster)
 	-- Restart xmonad
