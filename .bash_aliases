@@ -2,7 +2,7 @@ hostname=`hostname`
 
 # Common aliases
 alias gittagwithdate='git log --tags --simplify-by-decoration --pretty="format:%ai %d" | sort'
-
+alias win7='spicec -h 127.0.0.1 -p 5900'
 case $hostname in 
 
 sticky.vrt.telus.com) 
