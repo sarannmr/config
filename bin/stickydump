@@ -2,7 +2,7 @@
 USERNAME=sarann
 IFILE=/home/saran/.ssh/id_rsa
 DEST_DIR=/home/sarann/transfers/
-OPTS=" -avz "
+OPTS=" -avz --progress"
 HOST="172.16.1.2"
 
 if [ ! $# -eq "1" ] 

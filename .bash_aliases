@@ -55,7 +55,7 @@ thinness)
 
 esac
 
-export PATH=$HOME/bin:$PATH
+export PATH=/usr/local/apache2/bin:/usr/local/samba/bin:$HOME/bin:$PATH
 
 # Functions
 
@@ -80,5 +80,4 @@ EOF
     chmod +x $SSH_PROXY_COMMAND;
     ssh "$@"
 )
-
 
