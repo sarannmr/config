@@ -53,6 +53,11 @@ thinness)
     export no_proxy="localhost,127.0.0.1"
     ;; 
 
+godel)
+    alias hdd="sudo hdparm -C /dev/sd[a-h]" 
+    alias sleepnow="sudo hdparm -y /dev/sd[a-h]"
+    ;;
+
 esac
 
 export PATH=$HOME/bin:$PATH
