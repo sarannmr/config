@@ -1,5 +1,7 @@
 set nu
 syntax on
+set wildmenu
+set wildmode=list:longest
 set nocompatible
 set background=dark
 set smartindent
@@ -8,6 +10,8 @@ set shiftwidth=4
 set expandtab
 set ts=2
 set wrap lbr
+set tags=tags;/
+"set foldmethod=syntax
 
 map <F3> : call CompileGcc()<CR>
 func! CompileGcc()

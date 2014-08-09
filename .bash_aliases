@@ -49,9 +49,14 @@ lxr)
     export no_proxy="localhost,127.0.0.1,localaddress,.vrt.telus.com,172.16.0.0/16"
     ;;
 
+godel)
+    alias hdd="sudo hdparm -C /dev/sd[a-h]" 
+    alias sleepnow="sudo hdparm -y /dev/sd[a-h]"
+    ;;
+
 esac
 
-export PATH=$HOME/bin:$PATH
+export PATH=/usr/local/apache2/bin:/usr/local/samba/bin:$HOME/bin:$PATH
 
 # Functions
 
@@ -76,5 +81,4 @@ EOF
     chmod +x $SSH_PROXY_COMMAND;
     ssh "$@"
 )
-
 
