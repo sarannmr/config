@@ -50,8 +50,9 @@ lxr)
     ;;
 
 godel)
-    alias hdd="sudo hdparm -C /dev/sd[a-h]" 
-    alias sleepnow="sudo hdparm -y /dev/sd[a-h]"
+    alias hdd="sudo hdparm -C /dev/sd[a-i]" 
+    alias sleepnow="sudo hdparm -y /dev/sd[a-i]"
+    alias tarski='ssh -4 -XC saran@tarski.logic "xfce4-terminal -x tmux attach"'
     ;;
 
 esac
