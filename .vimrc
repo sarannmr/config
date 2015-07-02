@@ -8,7 +8,7 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set ts=2
+set ts=4
 set wrap lbr
 set tags=tags;/
 "set foldmethod=syntax
