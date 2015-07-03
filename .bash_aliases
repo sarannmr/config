@@ -4,6 +4,7 @@ hostname=`hostname`
 alias gittagwithdate='git log --tags --simplify-by-decoration --pretty="format:%ai %d" | sort'
 alias hacklab='ssh saranwrap@shell.hacklab.to -o "ProxyCommand corkscrew 172.16.1.162 3128 shell.hacklab.to 22"'
 alias win7='spicec -h 127.0.0.1 -p 5900'
+alias pc='proxychains'
 case $hostname in 
 
 sticky.vrt.telus.com) 
