@@ -49,6 +49,10 @@ godel)
     alias tarski='ssh -4 -XC saran@tarski.logic "xfce4-terminal -x tmux attach"'
     ;;
 
+turing)
+    alias sy="sudo systemctl start synergys"
+    alias ny="sudo systemctl stop synergys"
+    ;;
 esac
 
 export PATH=/usr/local/apache2/bin:/usr/local/samba/bin:$HOME/bin:$PATH
