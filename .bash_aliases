@@ -36,7 +36,7 @@ dhcp164)
 godel)
     alias hdd="sudo hdparm -C /dev/sd[a-i]" 
     alias sleepnow="sudo hdparm -y /dev/sd[a-i]"
-    alias gauss='ssh -4 -XC saran@gauss.logic "xfce4-terminal -x tmux attach"'
+    alias gauss='ssh -4 -YC saran@gauss.logic "xfce4-terminal -x tmux attach"'
     ;;
 
 turing)
