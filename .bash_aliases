@@ -42,6 +42,7 @@ godel)
 turing)
     alias sy="sudo systemctl start synergys"
     alias ny="sudo systemctl stop synergys"
+    alias gauss='ssh -4 -YC saran@gauss.logic "xfce4-terminal -x tmux attach"'
     ;;
 esac
 
