@@ -11,7 +11,9 @@ set expandtab
 set ts=4
 set wrap lbr
 set tags=tags;/
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 "set foldmethod=syntax
+autocmd SwapExists * let v:swapchoice = "o"
 
 map <F3> : call CompileGcc()<CR>
 func! CompileGcc()
